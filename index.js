@@ -2,7 +2,7 @@ const { Telegraf } = require('telegraf');
 const crypto = require('crypto');
 const express = require('express');
 
-const bot = new Telegraf('YOUR_BOT_TOKEN');
+const bot = new Telegraf('7666486780:AAHFXF-elXqS_-25F8tw9RAXSXSU2NdBl2A');
 const app = express();
 app.use(express.json());
 
