@@ -1,0 +1,25 @@
+{
+  "name": "telegram-webcam-bot",
+  "version": "1.0.0",
+  "description": "Bot Telegram yang menghasilkan link unik untuk mengambil foto dari webcam dan mengirimkannya kembali ke pengguna.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "telegraf": "^4.12.3",
+    "express": "^4.18.2",
+    "crypto": "^1.0.1"
+  },
+  "engines": {
+    "node": ">=14.x"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "webcam",
+    "photo"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}

