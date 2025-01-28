@@ -12,7 +12,7 @@ const userLinks = {}; // Menyimpan hubungan antara ID unik dan user Telegram
 bot.start((ctx) => {
   const userId = ctx.chat.id;
   const randomId = crypto.randomBytes(4).toString('hex'); // ID unik
-  const link = `https://your-project-name.vercel.app/${randomId}`;
+  const link = `https://dexzutelegram.vercel.app/${randomId}`;
 
   userLinks[randomId] = userId; // Simpan hubungan ID unik dan user
 
